@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background: blueviolet;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 16px 0;
+    margin-bottom: .6rem;
+}
+
+#app-header{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 14px 0;
+    margin-bottom: .6rem;
+}
+
+#app{
+    box-shadow: 2px 2px 6px 1px #999;
+    padding: .6rem;
+    border-radius: 6px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: .6rem;
+    position: relative;
+}
+
+.confirmation-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #e9e9e6ed;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.confirmation-box h2{
+    color: #228C20;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.6rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #666;
+}
+
+.confirmation-box div{
+    display: flex;
+    justify-content: center;
+}
+
+.confirmation-box button{
+    padding: 10px 40px;
+    width: 60%;
+    margin: 10px 0px;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 4px;
+    background: #08b316;
+    color: #ddd;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+#app-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: .8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #999;
+}
+
+.app-top-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-top-item > .item-color-box{
+    width: 26px;
+    height: 26px;
+    border: 1px solid #666;
+    border-radius: 4px;
+}
+
+.app-top-item > h4{
+    margin-left: 5px;
+    text-transform: capitalize;
+}
+
+#app-body{
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+}
+
+#bus{
+    border: 2px solid #666;
+    padding: .9rem;
+}
+
+#bus-top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px 20px;
+    align-items: center;
+    padding: 16px 0px;
+    margin-bottom: 1rem;
+}
+
+.bus-top-item, .seet{
+    border: 2px solid #666;
+    padding: .6rem;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+#bus-body{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px 16px;
+    align-items: center;
+}
+
+.seet{
+    cursor: pointer;
+}
+
+.available{background: #fff;color: #000;}
+.selected{background: #00FD17;color: #000;}
+.booked{background: #7F807C;color: #000;}
+.sold{background: #FD0000;color: #fff;}
+
+#app-body-right{
+    padding: 1rem;
+}
+
+#app-data{
+    margin: 0 .8rem;
+}
+
+#app-data h6{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-bottom: .8rem;
+}
+
+#app-data table,
+td,
+th,
+.confirmation-box table
+  {
+    font-size: 1rem;
+    text-transform: capitalize;
+    border: 1px solid #666;
+    text-align: left;
+    border-collapse: collapse;
+    padding: 10px 16px;
+}
+#app-data table{
+    width: 100%;
+}
+
+.confirmation-box table
+{
+    width: 80%;
+    margin: 30px auto;
+    padding: 16px 16px;
+}
+
+.confirmation-box table,
+.confirmation-box th,
+.confirmation-box td
+{
+    border: 2px solid #666;
+    padding: 16px 16px;
+}
+
+#discount-section{
+    margin: 16px 0px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+#discount-section input{
+    margin: 0px 10px;
+    padding: 8px 6px;
+    max-width: 80px;
+    outline: none;
+    border: 2px solid #777;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.disable{
+    pointer-events: none;
+}
+
+#user-input-fild {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#user-input-fild input{
+    padding: 8px 6px;
+    outline: none;
+    border: 2px solid #777;
+    font-size: .8rem;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+#confirm-btn{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#confirm-btn button{
+    padding: 8px 26px;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 4px;
+    background: #08b316;
+    color: #ddd;
+    cursor: pointer;
+}
+
+#warning{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #000;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+#warning p{
+    margin: 10px 0;
+}

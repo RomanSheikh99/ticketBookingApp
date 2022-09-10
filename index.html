@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- vue cdn -->
+    <!-- <script src="https://unpkg.com/vue@3"></script> -->
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Ticket Booking App</title>
+</head>
+<body>
+
+    <header>
+        <h1>ticket booking app</h1>
+    </header>
+
+    <section id="app-header">
+        <h2>select your seets</h2>
+    </section>
+    
+    <div id="app">
+        <div 
+        v-show="confirmBox"
+        class="confirmation-box">
+            <h2>Ticket Confirmd!</h2>
+            <table>
+                <tr>
+                    <th>Passenger Name</th>
+                    <td>{{userName}}</td>
+                </tr>
+                <tr>
+                    <th>Passenger Mobail</th>
+                    <td>{{userNumber}}</td>
+                </tr>
+                <tr>
+                    <th>Seat</th>
+                    <td>
+                        <template 
+                        v-for="seat in handleMaxSeat" 
+                        :key="seat.name">
+                        {{seat.name}} <br/>
+                        </template> 
+                    </td>
+                </tr>
+                <tr>
+                    <th>Total Price</th>
+                    <td>
+                        TK. {{totalPrice}}
+                        <span>(after discount {{discount}} tk.)</span>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button @click="handleSubmit">Submit</button>
+            </div>
+        </div>
+        <div id="app-top">
+            <div v-for="item in seetsInfo" :key="item.id" class="app-top-item">
+                <div :style="{backgroundColor: item.bg}" class="item-color-box"></div>
+                <h4>{{item.title}}</h4>
+            </div>
+        </div>
+        <div id="app-body">
+            <div id="app-body-left">
+                <div id="bus">
+                    <div id="bus-top">
+                        <div class="bus-top-item">
+                            <h5>door</h5>
+                        </div>
+                        <div class="bus-top-item">
+                            <h5>driver</h5>
+                        </div>
+                    </div>
+                    <div id="bus-body">
+                        <div 
+                        v-for="(seat, i) in seats" 
+                        :key="seat.name" 
+                        :class="seat.type" 
+                        class="seet"
+                        @click="handleSelect(i)"
+                        >
+                            <h5>{{seat.name}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="app-body-right">
+                <div v-show="handleMaxSeat.length < 1" id="warning">
+                    <p>Please Select any seat by click on available</p>
+                    <p>injoy your jurney!</p>
+                </div>
+                <div v-show="handleMaxSeat.length > 0"  id="app-data">
+                    <h6>Selected Seats</h6>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Seat</th>
+                                <th>Price</th>
+                            </tr>
+                            <tbody>
+                                <tr 
+                                v-for="seat in handleMaxSeat"
+                                :key="seat.name">
+                                    <td>{{seat.name}}</td>
+                                    <td>TK. {{seat.price}}</td>
+                                </tr>
+                                <tr v-show="true">
+                                    <td>Discount</td>
+                                    <td>TK. {{discount}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Total</th>
+                                    <th>TK. {{totalPrice}}</th>
+                                </tr>
+                            </tfoot>
+                        </thead>
+                    </table>
+                    <div  id="discount-section">
+                        <label for="discount">Apply Discount:</label>
+                        <input 
+                        :class="handleMaxSeat.length < 1 ? 'disable' : ''"
+                        type="number" 
+                        v-model.number="discountRate">
+                        <span>%</span>
+                    </div>
+                    <div id="user-input-fild">
+                        <input type="text" name="name" v-model="userName">
+                        <input type="text" name="number" v-model="userNumber">
+                    </div>
+                    <div id="confirm-btn">
+                        <button @click="handleConfirmBox">Confirm Ticket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- vue js -->
+    <script src="./vue.global.js"></script>
+    <!-- main js -->
+    <script src="script.js"></script>
+</body>
+</html>
