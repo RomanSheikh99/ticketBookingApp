@@ -179,8 +179,6 @@ const app = Vue.createApp({
           else{
             this.seats[i].type = this.seats[i].type == "selected" ? "available" : "selected";
           }
-          // this.discount = 0;
-          // this.discountRate = 0;
         },
         handleConfirmBox(){
           this.confirmBox = true;
